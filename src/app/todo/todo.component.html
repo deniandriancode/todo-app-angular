@@ -1,0 +1,10 @@
+<h1>Angular Todo App</h1>
+
+<form (submit)="addTask($event); $event.preventDefault()">
+	<input type="text" [formControl]="task" />
+	<button type="submit">Add</button>
+</form>
+
+<ul *ngFor="let t of taskList">
+  <app-todo-item [task]="t" (deleteItemEvent)="deleteItem($event)" ></app-todo-item>
+</ul>

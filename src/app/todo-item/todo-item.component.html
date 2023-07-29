@@ -1,0 +1,9 @@
+<style>
+  .finished {
+	  text-decoration: line-through;
+  }
+</style>
+
+<li [ngClass]="task.isFinished.value ? 'finished' : ''">
+  <input type="checkbox" [formControl]="task.isFinished" /> {{ task.content }} <button (click)="handleDeleteItem()">x</button>
+</li>
